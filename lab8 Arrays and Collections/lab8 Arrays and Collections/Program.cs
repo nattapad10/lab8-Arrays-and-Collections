@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace lab8_Arrays_and_Collections
 {
@@ -6,9 +7,10 @@ namespace lab8_Arrays_and_Collections
     {
         static void Main(string[] args)
         {
+           
 
-            string[] array1 = { "Afghanistan",
-        "Albania",
+            string[] AseanCountries = new string[] 
+        {"Afghanistan", "Albania",
         "Algeria",
         "American Samoa",
         "Andorra",
@@ -245,27 +247,28 @@ namespace lab8_Arrays_and_Collections
         "Western Sahara",
         "Yemen",
         "Zambia",
-        "Zimbabwe",};
+        "Zimbabwe" };
+        	
+            // C# program that uses LINQ
+            var sortAscending = from country in AseanCountries orderby country select country;
+            var sortDescending = from country in AseanCountries orderby country descending select country;
 
+            
 
+            Console.WriteLine("------String sort ascending----------");
+            foreach (string c in sortAscending)
+	        Console.WriteLine(c);
 
-            string[] array3 = Array.FindAll(array1,
-                   element => element.EndsWith("land",
-                   StringComparison.Ordinal));
-            Console.WriteLine(string.Join(",", array3));
-            Console.WriteLine("..............................");
-            string[] array4 = Array.FindAll(array1,
-                   element => element.EndsWith("stan",
-                   StringComparison.Ordinal));
-            Console.WriteLine(string.Join(",", array4));
-
+            Console.WriteLine("------String sort descending----------");
+            foreach (string c in sortDescending)
+                Console.WriteLine(c);
+            // wait
             Console.ReadLine();
 
+            
         }
 
-
     }
-
 }
 
 
