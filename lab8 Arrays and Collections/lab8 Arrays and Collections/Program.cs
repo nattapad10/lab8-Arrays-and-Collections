@@ -6,22 +6,19 @@ namespace lab8_Arrays_and_Collections
     {
         static void Main(string[] args)
         {
-            int i;
-            double[] GPS = new double[9];
-            for (i = 0; i < 8; i++)
-            {
-                Console.WriteLine("Plz input your GPS {0}", i + 1);
-                GPS[i] = double.Parse(Console.ReadLine());
-                GPS[8] = GPS[8] + GPS[i];
-            }
+            int d,m,x;           
+            int[] Nday = { 0,3,3,6,1,4,6,2,5,0,3,5};
+            string[] day = { "sunday", "Monday", "tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };       
+            Console.Write("pla input numberday");
+            d = int.Parse(Console.ReadLine());
+            Console.Write("pla input numberMo");
+            m = int.Parse(Console.ReadLine());
 
-            for (i = 0; i < 8; i++)
-            {
-                Console.WriteLine("your GPS{0} = {1}", i + 1,GPS[i]);
-                if(i==7)
-                    Console.WriteLine("your GPA = {0}", GPS[8]/8);
+            x = ((d + Nday[m -1]) - 1) % 7;
+                   
+            Console.WriteLine("{0}/{1}/2560 {2}",d,m,day[x]);
 
-            }
+
         }
     }
 }
