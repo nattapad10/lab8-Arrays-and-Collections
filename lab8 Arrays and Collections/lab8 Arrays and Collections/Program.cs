@@ -8,17 +8,17 @@ namespace QueueDemo
     {
         static void Main(string[] args)
         {
-            Queue<int> queue1 = new Queue<int>();
-            queue1.Enqueue(10);
-            queue1.Enqueue(20);
-            queue1.Enqueue(30);
-            queue1.Enqueue(40);
-            Console.WriteLine("The queue elements are:");
-            foreach (int i in queue1)
+            Stack<int> stack1 = new Stack<int>();
+            stack1.Push(10);
+            stack1.Push(20);
+            stack1.Push(30);
+            stack1.Push(40);
+            Console.WriteLine("The stack elements are:");
+            foreach (int i in stack1)
             {
                 Console.WriteLine(i);
             }
-            ArrayList array = new ArrayList(queue1.ToArray());
+            ArrayList array = new ArrayList(stack1.ToArray());
             Console.WriteLine("\nContents of the copy");
             foreach (int i in array)
             {
@@ -28,4 +28,3 @@ namespace QueueDemo
         }
     }
 }
-
